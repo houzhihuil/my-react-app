@@ -1,23 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
+import Cv from "./pages/Cv";
+import NoPage from "./pages/NoPage";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>
-          Welcome to my website, a developer's workshop!
-        </h1>
+      <h1>Wecome to my site, a developer's workshop.</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="projects" element={<Projects />} /> 
+            <Route path="contact" element={<Contact />} />
+            <Route path="cv" element={<Cv />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter> 
+        <img src={logo} className="App-logo" alt="logo" /> 
         <a
           className="App-link"
           href="https://alexandrev17.sg-host.com/cv/"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Philip's CV
+        > 
+          <h3>Philip's CV</h3>
         </a>
-      </header>
+      </header> 
     </div>
   );
 }
