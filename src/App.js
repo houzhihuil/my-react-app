@@ -6,9 +6,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <h1>
           Welcome to my website, a developer's workshop!
-        </p>
+        </h1>
         <a
           className="App-link"
           href="https://alexandrev17.sg-host.com/cv/"
