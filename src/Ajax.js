@@ -5,7 +5,7 @@ function Ajax(){
     const [isLoaded, setIsloaded] = useState(false);
     const [items, setItems] = useState([]); 
 
-     let url = "/produits.json";
+    let url = "/produits.json";
     // let url = "http://localhost:3000/produits"
     // let url ="https://node-portables.cyclic.app/"
     useEffect(() => {
@@ -29,6 +29,7 @@ function Ajax(){
     }else {
         return ( 
             <>
+            <h1>Ajax Produit Data</h1>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
              
             <table border="1" width="60%">
