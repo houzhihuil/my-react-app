@@ -1,26 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './App.css';
+import logo from './logo.svg';
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact"; 
 import NoPage from "./pages/NoPage";
-import React, {useState} from 'react';
+import Ajax from "./Ajax.js"
 
 function App() {
+
+  const [framework, setframework]= useState("React.js");
+
   const myStyle = {
     framework: "white",
     backgroundframework: "DodgerBlue",
     padding: "10px",
     fontFamily: "Sans-Serif"
   };
-  const [framework, setframework]= useState("Node.js");
+
   return (
     <>
     <div className="App">
       <header className="App-header">
-      <h1 style={myStyle}>Wecome to my site, a developer's workshop.</h1>
+      <h1 style={myStyle}>Wecome to my site, a developer's workshop!</h1>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -31,17 +35,9 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter> 
-        <img src={logo} className="App-logo" alt="logo" /> 
-        <a
-          className="App-link"
-          href="https://alexandrev17.sg-host.com/cv/"
-          target="_blank"
-          rel="noopener noreferrer"
-        > 
-          <h3>Philip's CV</h3>
-        </a>
+        <img src={logo} className="App-logo" alt="logo" />  
       </header>
-      <body>
+      <nav>
       <h1>My favorite framework is {framework}!</h1>
         
         <button 
@@ -50,8 +46,8 @@ function App() {
         >ASP.NET</button>
         <button 
           type="button"
-          onClick ={() =>setframework("React")}
-        >React</button>
+          onClick ={() =>setframework("Node.js")}
+        >Node.js</button>
         <button 
           type="button"
           onClick ={() =>setframework("Angular")}
@@ -60,8 +56,21 @@ function App() {
         <button 
           type="button"
           onClick ={() =>setframework("Ruby on Rails")}
-        >Ruby on Rails</button>
-        </body> 
+        >Ruby on Rails</button>  
+        </nav>
+        <main>
+          <Ajax />  
+        </main>
+        <footer>
+          <a
+            className="App-link"
+            href="https://alexandrev17.sg-host.com/cv/"
+            target="_blank"
+            rel="noopener noreferrer"
+          > 
+          <h3>Philip's CV</h3>
+        </a>
+        </footer> 
     </div>
     </>
   );
