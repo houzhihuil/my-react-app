@@ -26,8 +26,7 @@ function App() {
           <Hook />
       </nav>
         <main> 
-          <Ajax />
-          <ApiComponent />  
+          <Ajax /> 
         </main>
         <footer>
           <Routage />
