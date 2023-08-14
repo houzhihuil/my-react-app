@@ -6,7 +6,7 @@ function ApiComponent() {
   const [data, setData] = useState([]);
    // let url= 'https://jsonplaceholder.typicode.com/posts';
   // const url ="https://node-portables.cyclic.app/"
-  let url ="https://good-tan-pike-wrap.cyclic.app/"
+  let url ="https://busy-pink-drill-vest.cyclic.app//"
  
   useEffect(() => {
     axios.get(url)
