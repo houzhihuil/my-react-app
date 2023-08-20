@@ -5,10 +5,10 @@ function Ajax(){
     const [isLoaded, setIsloaded] = useState(false);
     const [items, setItems] = useState([]); 
 
-    let url ;
-     url = "/produits.json";
-     // url ="https://node-portables.cyclic.app/"
-     //url ="https://node-labo1.cyclic.cloud/"
+    // let url  = "/produits.json";
+    // let url ="https://node-portables.cyclic.app/"
+      
+    let url = "https://node-labo1.cyclic.cloud/";
     useEffect(() => {
          
         fetch(url)
@@ -16,7 +16,7 @@ function Ajax(){
         .then(
             (result) =>{
                 setIsloaded(true);
-                setItems(result.produits);
+                setItems(result);
             },
             (error) =>{
                 setIsloaded(true);
